@@ -86,8 +86,6 @@ a:hover {
     body {
         font-size: 18px;
         line-height: 1.6;
-        /* Improve touch scrolling on iOS */
-        -webkit-overflow-scrolling: touch;
         /* Optimize for safe areas on iPhone (notch, home indicator) */
         padding-top: max(1.25rem, env(safe-area-inset-top));
         padding-right: max(1.25rem, env(safe-area-inset-right));
@@ -118,7 +116,10 @@ a:hover {
     }
 
     /* Touch-friendly interactive elements (minimum 44x44px) */
-    a:not([href^="#"]) {
+    a[target="_blank"],
+    a[href^="mailto"],
+    a[href^="tel"] {
+        min-width: 44px;
         min-height: 44px;
         display: inline-flex;
         align-items: center;
