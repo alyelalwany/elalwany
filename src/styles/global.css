@@ -123,16 +123,9 @@ a:hover {
         min-height: 44px;
         display: inline-flex;
         align-items: center;
-        padding: 0.5rem 0;
+        padding: 0.625rem;
         /* Prevent text selection on tap */
         -webkit-tap-highlight-color: transparent;
-    }
-}
-
-/* Larger mobile devices optimization */
-@media only screen and (min-width: 390px) and (max-width: 430px) {
-    h1 {
-        font-size: 2.125rem;
     }
 }
 
@@ -140,17 +133,10 @@ a:hover {
 @media only screen and (max-height: 430px) and (orientation: landscape) {
     body {
         padding: 1rem;
-        min-height: auto;
     }
 
     h1 {
         font-size: 1.75rem;
         margin-bottom: 1rem;
-    }
-
-    main {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
     }
 }
