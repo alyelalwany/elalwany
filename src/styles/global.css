@@ -89,7 +89,10 @@ a:hover {
         /* Improve touch scrolling on iOS */
         -webkit-overflow-scrolling: touch;
         /* Optimize for safe areas on iPhone (notch, home indicator) */
-        padding: max(1.25rem, env(safe-area-inset-top)) max(1.25rem, env(safe-area-inset-right)) max(1.25rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left));
+        padding-top: max(1.25rem, env(safe-area-inset-top));
+        padding-right: max(1.25rem, env(safe-area-inset-right));
+        padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+        padding-left: max(1.25rem, env(safe-area-inset-left));
     }
 
     main {
@@ -115,9 +118,7 @@ a:hover {
     }
 
     /* Touch-friendly interactive elements (minimum 44x44px) */
-    a[href^="http"],
-    a[href^="mailto"],
-    a[href^="tel"] {
+    a:not([href^="#"]) {
         min-height: 44px;
         display: inline-flex;
         align-items: center;
@@ -127,13 +128,8 @@ a:hover {
     }
 }
 
-/* iPhone 15 Pro Max and similar larger mobile devices */
-@media only screen and (min-width: 390px) and (max-width: 430px) and (-webkit-device-pixel-ratio: 3) {
-    /* Fine-tune for devices with 3x pixel density */
-    body {
-        font-size: 18px;
-    }
-
+/* Larger mobile devices optimization */
+@media only screen and (min-width: 390px) and (max-width: 430px) {
     h1 {
         font-size: 2.125rem;
     }
