@@ -1,0 +1,14 @@
+.contact-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    a {
+        color: var(--text-primary);
+        transition: color 0.2s ease;
+    }
+
+    a:hover {
+        color: var(--accent);
+    }
+}
