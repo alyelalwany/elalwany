@@ -86,9 +86,10 @@ a:hover {
     body {
         font-size: 18px;
         line-height: 1.6;
-        padding: 1.25rem;
         /* Improve touch scrolling on iOS */
         -webkit-overflow-scrolling: touch;
+        /* Optimize for safe areas on iPhone (notch, home indicator) */
+        padding: max(1.25rem, env(safe-area-inset-top)) max(1.25rem, env(safe-area-inset-right)) max(1.25rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left));
     }
 
     main {
@@ -113,27 +114,16 @@ a:hover {
         font-size: 1rem;
     }
 
-    /* Touch-friendly button and link sizes (minimum 44x44px) */
-    a {
+    /* Touch-friendly interactive elements (minimum 44x44px) */
+    a[href^="http"],
+    a[href^="mailto"],
+    a[href^="tel"] {
         min-height: 44px;
         display: inline-flex;
         align-items: center;
         padding: 0.5rem 0;
         /* Prevent text selection on tap */
         -webkit-tap-highlight-color: transparent;
-    }
-
-    /* Improve spacing for readability */
-    * + * {
-        margin-top: 0.75rem;
-    }
-
-    /* Optimize for safe areas on iPhone (notch, home indicator) */
-    body {
-        padding-left: max(1.25rem, env(safe-area-inset-left));
-        padding-right: max(1.25rem, env(safe-area-inset-right));
-        padding-top: max(1.25rem, env(safe-area-inset-top));
-        padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
     }
 }
 
