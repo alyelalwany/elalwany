@@ -124,7 +124,7 @@ a:hover {
         display: inline-flex;
         align-items: center;
         padding: 0.625rem;
-        /* Prevent text selection on tap */
+        /* Remove tap highlight on iOS */
         -webkit-tap-highlight-color: transparent;
     }
 }
