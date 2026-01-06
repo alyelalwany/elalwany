@@ -1,6 +1,6 @@
 # elalwany.de
 
-A modern, minimalist portfolio website(elalwany.de) built with Astro, TypeScript, and Tailwind CSS.
+A modern, minimalist portfolio website [elalwany.de](https://elalwany.de) built with Astro, TypeScript, and Tailwind CSS.
 
 ## 🚀 Tech Stack
 
