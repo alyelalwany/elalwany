@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import PreviousWork from '../components/PreviousWork.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import CurrentProjects from "../components/CurrentProjects.astro";
+---
+
+<Layout title="Aly Elalwany" description="software engineer who likes to build stuff" icon="/favicon.svg">
+  <!-- Hero Section -->
+  <Hero />
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-neutral-50">
+        <About />
+    </section>
+    <!-- Selected Work Section -->
+    <section id="work" class="py-20 px-6 max-w-7xl mx-auto">
+        <CurrentProjects />
+    </section>
+  <!-- Selected Work Section -->
+  <section id="work" class="py-20 px-6 max-w-7xl mx-auto">
+      <PreviousWork />
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-6 max-w-7xl mx-auto">
+    <Contact />
+  </section>
+</Layout>

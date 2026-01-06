@@ -1,0 +1,33 @@
+---
+import { Github, Linkedin, Mail } from 'lucide-astro';
+---
+
+<div class="contact-links">
+    <a href="https://github.com/alyelalwany" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <Github size={24} />
+    </a>
+    <a href="https://linkedin.com/in/alyelalwany" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <Linkedin size={24} />
+    </a>
+    <a href="mailto:alyelalwany@gmail.com" aria-label="Email">
+        <Mail size={24} />
+    </a>
+</div>
+
+<style>
+    .contact-links {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a {
+        color: var(--text-primary);
+        transition: color 0.2s ease;
+    }
+
+    a:hover {
+        color: var(--accent);
+    }
+</style>
