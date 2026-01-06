@@ -19,21 +19,22 @@ export default tseslint.config(
       '.idea/**',
       '**/node_modules/**',
       '**/dist/**',
-      '**/*.js',
-      '**/*.mjs'
+      '.astro/**',
+      'astro.config.mjs',
+      'tailwind.config.mjs',
+      'jest.config.ts',
     ],
   },
   {
-    files: ['**/*.ts', '**/*.mts'],
-    ignores: ['node_modules'],
+    files: ['src/**/*.ts', 'src/**/*.mts', 'src/**/*.js'],
     rules: {
       '@stylistic/indent': ['error', 2, {
-        'FunctionDeclaration': {'parameters': 'first'},
-        'FunctionExpression': {'parameters': 'first'},
+        FunctionDeclaration: { parameters: 'first' },
+        FunctionExpression: { parameters: 'first' },
       }],
       '@typescript-eslint/no-explicit-any': 'off',
-      'max-len': ['error', {code: 200}],
-      'no-irregular-whitespace': ['error', {skipRegExps: true}],
+      'max-len': ['error', { code: 200 }],
+      'no-irregular-whitespace': ['error', { skipRegExps: true }],
       '@typescript-eslint/naming-convention': [
         'error',
         {
