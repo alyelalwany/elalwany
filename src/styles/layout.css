@@ -12,3 +12,23 @@
         color: var(--accent);
     }
 }
+
+/* iPhone 15 and mobile touch optimization */
+@media only screen and (max-width: 430px) {
+    .contact-links {
+        gap: 2rem;
+        margin-top: 2rem;
+        
+        a {
+            /* Ensure minimum touch target size */
+            min-width: 44px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.625rem;
+            /* Remove tap highlight on iOS */
+            -webkit-tap-highlight-color: transparent;
+        }
+    }
+}
