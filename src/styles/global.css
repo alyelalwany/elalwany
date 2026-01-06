@@ -190,7 +190,7 @@ a:hover {
 }
 
 /* iPad in landscape orientation */
-@media only screen and (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+@media only screen and (min-width: 768px) and (max-width: 1366px) and (max-height: 1024px) and (orientation: landscape) {
     body {
         padding: 2rem 3rem;
     }
