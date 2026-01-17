@@ -10,7 +10,9 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
+    "@iconify-json/simple-icons": "^1.2.66",
     "astro": "^5.16.6",
+    "astro-icon": "^1.1.5",
     "lucide-astro": "^0.556.0"
   },
   "devDependencies": {

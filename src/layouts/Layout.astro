@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import '../styles/layout.css';
 import {Github, Linkedin, Mail} from "lucide-astro";
+import { Icon } from 'astro-icon/components';
 
 interface Props {
   title: string;
@@ -35,6 +36,9 @@ const { title, description, icon } = Astro.props;
         </a>
         <a href="mailto:alyelalwany@gmail.com" aria-label="Email">
             <Mail size={24} />
+        </a>
+        <a href="https://buymeacoffee.com/elalwany" target="_blank" rel="noopener noreferrer" aria-label="Buy Me a Coffee">
+            <Icon name="simple-icons:buymeacoffee" width="24" height="24" />
         </a>
     </div>
 </main>
