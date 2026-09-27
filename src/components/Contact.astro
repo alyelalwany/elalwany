@@ -1,6 +1,29 @@
 ---
+import { Github, Linkedin, Mail } from "lucide-astro";
+
+const channels = [
+    { href: 'mailto:alyelalwany@gmail.com', label: 'alyelalwany@gmail.com', Icon: Mail, external: false },
+    { href: 'https://linkedin.com/in/alyelalwany', label: 'linkedin.com/in/alyelalwany', Icon: Linkedin, external: true },
+    { href: 'https://github.com/alyelalwany', label: 'github.com/alyelalwany', Icon: Github, external: true },
+];
 ---
-<div>
-    <h2>Future work</h2>
-    <p>Need help with your product? Reach out to me at <a href="mailto:alyelalwany@gmail.com" aria-label="Email">my email</a></p>
-</div>
+<section id="contact" class="scroll-mt-20 border-t border-[var(--border-color)] py-20">
+    <h2 class="mb-4 text-sm font-medium uppercase tracking-widest text-[var(--accent)]">Get in touch</h2>
+    <p class="mb-10 max-w-2xl text-lg text-[var(--text-secondary)]">
+        Working on something in cloud, security, or platform engineering? I&rsquo;d be glad to hear
+        about it &mdash; reach out through any of these.
+    </p>
+    <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        {channels.map(({ href, label, Icon, external }) => (
+            <a
+                href={href}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noopener noreferrer' : undefined}
+                class="inline-flex items-center gap-3 rounded-full border border-[var(--border-color)] px-5 py-3 text-[var(--text-primary)] no-underline transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] hover:no-underline"
+            >
+                <Icon size={20} />
+                <span>{label}</span>
+            </a>
+        ))}
+    </div>
+</section>

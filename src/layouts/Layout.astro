@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import '../styles/layout.css';
 import {Github, Linkedin, Mail} from "lucide-astro";
 import { Icon } from 'astro-icon/components';
 
@@ -10,37 +9,68 @@ interface Props {
   icon: string;
 }
 const { title, description, icon } = Astro.props;
+
+const navLinks = [
+  { href: '#about', label: 'About' },
+  { href: '#now', label: 'Now' },
+  { href: '#services', label: 'Services' },
+  { href: '#certifications', label: 'Certs' },
+  { href: '#contact', label: 'Contact' },
+];
 ---
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content={description}>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <title>{title}</title>
     <link rel="icon" href={icon} />
 </head>
-<body>
-<main>
+<body class="min-h-screen">
+<header class="sticky top-0 z-50 border-b border-[var(--border-color)] bg-[var(--bg-primary)]/80 backdrop-blur">
+    <nav class="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+        <a href="#" class="text-sm font-semibold tracking-tight text-[var(--text-primary)] no-underline hover:text-[var(--accent)]">
+            Aly Elalwany
+        </a>
+        <ul class="hidden gap-6 text-sm text-[var(--text-secondary)] sm:flex">
+            {navLinks.map((link) => (
+                <li>
+                    <a href={link.href} class="no-underline transition-colors hover:text-[var(--accent)]">
+                        {link.label}
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </nav>
+</header>
+
+<main class="mx-auto max-w-4xl px-6">
     <slot />
-    <div class="contact-links">
-        <a href="https://github.com/alyelalwany" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <Github size={24} />
-        </a>
-        <a href="https://linkedin.com/in/alyelalwany" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <Linkedin size={24} />
-        </a>
-        <a href="mailto:alyelalwany@gmail.com" aria-label="Email">
-            <Mail size={24} />
-        </a>
-        <a href="https://buymeacoffee.com/elalwany" target="_blank" rel="noopener noreferrer" aria-label="Buy Me a Coffee">
-            <Icon name="simple-icons:buymeacoffee" width="24" height="24" />
-        </a>
-    </div>
+
+    <footer class="border-t border-[var(--border-color)] py-10">
+        <div class="flex items-center justify-center gap-6">
+            <a href="https://github.com/alyelalwany" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+               class="text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]">
+                <Github size={22} />
+            </a>
+            <a href="https://linkedin.com/in/alyelalwany" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+               class="text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]">
+                <Linkedin size={22} />
+            </a>
+            <a href="mailto:alyelalwany@gmail.com" aria-label="Email"
+               class="text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]">
+                <Mail size={22} />
+            </a>
+            <a href="https://buymeacoffee.com/elalwany" target="_blank" rel="noopener noreferrer" aria-label="Buy Me a Coffee"
+               class="text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]">
+                <Icon name="simple-icons:buymeacoffee" width="22" height="22" />
+            </a>
+        </div>
+        <p class="mt-6 text-center text-xs text-[var(--text-secondary)]">
+            &copy; {new Date().getFullYear()} Aly Elalwany
+        </p>
+    </footer>
 </main>
 </body>
 </html>

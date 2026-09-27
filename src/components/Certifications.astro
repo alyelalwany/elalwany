@@ -1,0 +1,43 @@
+---
+const certifications = [
+    {
+        name: 'Certified Kubernetes Administrator (CKA)',
+        issuer: 'The Linux Foundation / CNCF',
+        badgeUrl: 'https://www.credly.com/badges/1ee7be79-ec47-4ad9-8ff0-a1cffc73057b/public_url',
+        imageUrl: 'https://images.credly.com/size/440x440/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png',
+    },
+    {
+        name: 'AWS Certified Solutions Architect',
+        issuer: 'Amazon Web Services',
+        badgeUrl: 'https://www.credly.com/badges/583dfa7c-fd37-41c6-a41d-2746ed0066c3/public_url',
+        imageUrl: 'https://images.credly.com/size/440x440/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png',
+    },
+];
+---
+<section id="certifications" class="scroll-mt-20 border-t border-[var(--border-color)] py-20">
+    <h2 class="mb-10 text-sm font-medium uppercase tracking-widest text-[var(--accent)]">Certifications</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+        {certifications.map((cert) => (
+            <a
+                href={cert.badgeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${cert.name} on Credly`}
+                class="flex items-center gap-5 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] p-6 no-underline transition-colors hover:border-[var(--accent)] hover:no-underline"
+            >
+                <img
+                    src={cert.imageUrl}
+                    alt={cert.name}
+                    width="96"
+                    height="96"
+                    loading="lazy"
+                    class="h-24 w-24 shrink-0"
+                />
+                <span class="flex flex-col">
+                    <span class="text-lg font-semibold text-[var(--text-primary)]">{cert.name}</span>
+                    <span class="mt-1 text-sm text-[var(--text-secondary)]">{cert.issuer}</span>
+                </span>
+            </a>
+        ))}
+    </div>
+</section>
